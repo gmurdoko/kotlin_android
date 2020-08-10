@@ -13,19 +13,21 @@
         android:text="Your Name"
         android:textAlignment="center"
         android:textSize="34dp"
-
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="64dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="64dp"
+        app:layout_constraintTop_toBottomOf="@+id/activity_board_view"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintStart_toStartOf="parent">
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/cell0"
@@ -34,7 +36,7 @@
             android:layout_margin="5dp"
             android:onClick="flip"
             android:tag="0"
-            android:text="X"
+            android:text=""
             android:textAlignment="center"
             android:textSize="36dp" />
 
@@ -45,7 +47,7 @@
             android:layout_margin="5dp"
             android:onClick="flip"
             android:tag="1"
-            android:text="Y"
+            android:text=""
             android:textAlignment="center"
             android:textSize="36dp" />
 
@@ -56,9 +58,99 @@
             android:layout_margin="5dp"
             android:onClick="flip"
             android:tag="2"
-            android:text="Z"
+            android:text=""
             android:textAlignment="center"
             android:textSize="36dp" />
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/cell3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:onClick="flip"
+            android:tag="3"
+            android:text=""
+            android:textAlignment="center"
+            android:textSize="36dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/cell4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:onClick="flip"
+            android:tag="4"
+            android:text=""
+            android:textAlignment="center"
+            android:textSize="36dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/cell5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:onClick="flip"
+            android:tag="5"
+            android:text=""
+            android:textAlignment="center"
+            android:textSize="36dp" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/cell6"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:onClick="flip"
+            android:tag="6"
+            android:text=""
+            android:textAlignment="center"
+            android:textSize="36dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/cell7"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:onClick="flip"
+            android:tag="7"
+            android:text=""
+            android:textAlignment="center"
+            android:textSize="36dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/cell8"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:onClick="flip"
+            android:tag="8"
+            android:text=""
+            android:textAlignment="center"
+            android:textSize="36dp" />
+
 
     </LinearLayout>
 
@@ -71,6 +163,8 @@
         android:text="BACK"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

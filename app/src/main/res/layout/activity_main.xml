@@ -43,13 +43,13 @@
             android:hint="Player 2"
             />
 
-        <com.google.android.material.button.MaterialButton
-        android:id="@+id/button_pencet"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="PENCET"
+<!--        <com.google.android.material.button.MaterialButton-->
+<!--        android:id="@+id/button_pencet"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="PENCET"-->
 
-        />
+<!--        />-->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button_tekan"
             android:layout_width="match_parent"
@@ -57,14 +57,14 @@
             android:text="Start"
 
             />
-        <TextView
-            android:id="@+id/main_text_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="34dp"
-            android:text="Your Name"
-            android:textAlignment="center"
-            />
+<!--        <TextView-->
+<!--            android:id="@+id/main_text_view"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:textSize="34dp"-->
+<!--            android:text="Your Name"-->
+<!--            android:textAlignment="center"-->
+<!--            />-->
 
 
 
