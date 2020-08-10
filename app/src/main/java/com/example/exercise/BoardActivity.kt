@@ -1,6 +1,7 @@
 package com.example.exercise
 
 import android.content.Intent
+import android.media.AsyncPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -13,8 +14,8 @@ import kotlinx.android.synthetic.main.activity_main.*
 class BoardActivity : AppCompatActivity() {
     val activityName = "BOARD_ACTIVITY"
     var ActivePlayer = true
-    var tacToePlayer1= arrayOf<Int>()
-    var tacToePlayer2= arrayOf<Int>()
+    var tacToePlayer1= mutableListOf<Int>()
+    var tacToePlayer2= mutableListOf<Int>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         println("$activityName ON_CREATE")
@@ -70,12 +71,29 @@ class BoardActivity : AppCompatActivity() {
             view.text = "X"
             activity_board_view.text = "$player2 turn"
             ActivePlayer=false
+            tacToePlayer1.add(view.tag.toString().toInt())
+            checkWinner(tacToePlayer1, player1)
         } else{
             view.text = "O"
             activity_board_view.text ="$player1 turn"
             ActivePlayer=true
+            tacToePlayer2.add(view.tag.toString().toInt())
+            checkWinner(tacToePlayer2,player2)
         }
     view.isEnabled=false
+
+
+    }
+    fun checkWinner(Player: MutableList<Int>,player: String){
+        if ((Player.contains(0)&&Player.contains(1)&&Player.contains(2))||(Player.contains(0)&&Player.contains(3)&&Player.contains(6))||(Player.contains(0)&&Player.contains(4)&&Player.contains(8))){
+            activity_board_view.text ="$player winner"
+        } else if ((Player.contains(1)&&Player.contains(4)&&Player.contains(7))||(Player.contains(2)&&Player.contains(5)&&Player.contains(8))){
+            activity_board_view.text ="$player winner"
+        } else if ((Player.contains(3)&&Player.contains(4)&&Player.contains(5))||(Player.contains(6)&&Player.contains(7)&&Player.contains(8))){
+            activity_board_view.text ="$player winner"
+        } else if (Player.contains(2)&&Player.contains(4)&&Player.contains(6)){
+            activity_board_view.text ="$player winner"
+        }
     }
 
     fun goToHome(view: View) {
