@@ -14,6 +14,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 class BoardActivity : AppCompatActivity() {
     val activityName = "BOARD_ACTIVITY"
     var ActivePlayer = true
+    var Winner =false
     var tacToePlayer1= mutableListOf<Int>()
     var tacToePlayer2= mutableListOf<Int>()
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -67,32 +68,38 @@ class BoardActivity : AppCompatActivity() {
         val inIntent = getIntent()
         val player1 = inIntent.getStringExtra(PLAYER_1)
         val player2 = inIntent.getStringExtra(PLAYER_2)
-        if (ActivePlayer){
-            view.text = "X"
-            activity_board_view.text = "$player2 turn"
-            ActivePlayer=false
-            tacToePlayer1.add(view.tag.toString().toInt())
-            checkWinner(tacToePlayer1, player1)
-        } else{
-            view.text = "O"
-            activity_board_view.text ="$player1 turn"
-            ActivePlayer=true
-            tacToePlayer2.add(view.tag.toString().toInt())
-            checkWinner(tacToePlayer2,player2)
+        if(!Winner){
+            if (ActivePlayer){
+                view.text = "X"
+                activity_board_view.text = "$player2 turn"
+                ActivePlayer=false
+                tacToePlayer1.add(view.tag.toString().toInt())
+                checkWinner(tacToePlayer1, player1)
+            } else{
+                view.text = "O"
+                activity_board_view.text ="$player1 turn"
+                ActivePlayer=true
+                tacToePlayer2.add(view.tag.toString().toInt())
+                checkWinner(tacToePlayer2,player2)
+            }
+            view.isEnabled=false
         }
-    view.isEnabled=false
 
 
     }
     fun checkWinner(Player: MutableList<Int>,player: String){
         if ((Player.contains(0)&&Player.contains(1)&&Player.contains(2))||(Player.contains(0)&&Player.contains(3)&&Player.contains(6))||(Player.contains(0)&&Player.contains(4)&&Player.contains(8))){
             activity_board_view.text ="$player winner"
+            Winner=true
         } else if ((Player.contains(1)&&Player.contains(4)&&Player.contains(7))||(Player.contains(2)&&Player.contains(5)&&Player.contains(8))){
             activity_board_view.text ="$player winner"
+            Winner=true
         } else if ((Player.contains(3)&&Player.contains(4)&&Player.contains(5))||(Player.contains(6)&&Player.contains(7)&&Player.contains(8))){
             activity_board_view.text ="$player winner"
+            Winner=true
         } else if (Player.contains(2)&&Player.contains(4)&&Player.contains(6)){
             activity_board_view.text ="$player winner"
+            Winner=true
         }
     }
 
